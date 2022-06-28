@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>neuesTraining</class>
+ <widget class="QDialog" name="neuesTraining">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	color: white;
+	font-family: &quot;Trebuchet MS&quot;;
+}
+
+#neuesTraining{
+	background-color: rgb(69, 69, 69);
+}
+
+#listWidget{
+	background-color: rgb(192,192,192);
+}
+
+#Titel{
+	color: white;
+	background-color: #761811;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px;
+	border-radius: 3px;
+}
+
+#pushButton_Start{
+	font-size: 6pt;
+	font-weight: bold;
+	border-radius: 3px;
+	color: rgb(69, 69, 69);
+	background-color: rgb(192, 192, 192);
+}
+
+#pushButton_Uebungen{
+	font-size: 6pt;
+	font-weight: bold;
+	border-radius: 3px;
+	color: rgb(69, 69, 69);
+	background-color: rgb(192, 192, 192);
+}
+
+#pushButton_Back{
+	background-color: rgb(98, 98, 98);
+	font-size: 6pt;
+   border-radius: 3px;
+	border: 2px solid rgb(45,45,45);
+	color: rgb(228,228,228);
+}
+
+</string>
+  </property>
+  <widget class="QLabel" name="Titel">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>30</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Trainingsplan</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>45</x>
+     <y>70</y>
+     <width>361</width>
+     <height>251</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Uebungen">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>340</y>
+     <width>101</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Übungsliste öffnen</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Start">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>370</y>
+     <width>101</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Training starten</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Back">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>10</y>
+     <width>51</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Zurück</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

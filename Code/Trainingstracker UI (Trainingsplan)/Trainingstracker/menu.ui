@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Menu</class>
+ <widget class="QMainWindow" name="Menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	color: white;
+	font-family: &quot;Trebuchet MS&quot;;
+	text-align: center;
+}
+
+#centralwidget{
+	background-image: url(:/background_menu.jpg);
+}
+
+#Logo {
+	background-color: #761811;
+	border-radius: 12px;
+	padding: 8px;
+	font-weight: bold;
+	font-size: 15pt;
+}
+
+#Titel{
+	font-weight: bold;
+	font-size: 15pt;
+	background: transparent;
+}
+
+#pushButton_MyProfile{
+	font-size: 15pt;
+	font-weight: bold;
+	border-radius: 12px;
+	color: white;
+	background-color: #761811;
+}
+
+#pushButton_Training{
+	font-size: 15pt;
+	font-weight: bold;
+	border-radius: 12px;
+	color: white;
+	background-color: #761811;
+}
+
+#pushButton_Kalorien{
+	font-size: 15pt;
+	font-weight: bold;
+	border-radius: 12px;
+	color: white;
+	background-color: #761811;
+}
+
+#pushButton_Abmelden{
+	background-color: rgb(85,85,85);
+	border: 2px solid rgb(56, 56, 56);
+	border-radius: 5px;
+	font-size: 6pt;
+	color: rgb(228,228,228);
+}
+
+#pushButton_Body{
+	font-size: 15pt;
+	font-weight: bold;
+	border-radius: 12px;
+	color: white;
+	background-color: #761811;
+}
+
+#pushButton_MyProfile:hover{
+	background-color: rgb(89,89,89);
+	border: 5px solid #761811;
+}
+
+#pushButton_Training:hover{
+	background-color: rgb(89,89,89);
+	border: 5px solid #761811;
+}
+
+#pushButton_Kalorien:hover{
+	background-color: rgb(89,89,89);
+	border: 5px solid #761811;
+}
+
+#pushButton_Body:hover{
+	background-color: rgb(89,89,89);
+	border: 5px solid #761811;
+}
+
+
+	</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="Logo">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>40</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string> TT</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Titel">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>100</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trainingstracker</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_MyProfile">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>190</y>
+      <width>220</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Mein Profil</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Training">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>190</y>
+      <width>220</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trainingsplan</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Kalorien">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>360</y>
+      <width>220</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kalorienzähler</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Body">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>360</y>
+      <width>220</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Körperangaben</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Abmelden">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Abmelden</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>16</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+  api_server:
+    build: API_Code/.
+    ports:
+      - "6502:6502"
+    links:
+      - postgres
+    depends_on:
+      - postgres
+    environment:
+      DBADDRESS: postgres
+      DBPORT: 5432
+      DBNAME: ${DBNAME}
+      DBPASSWORD: ${DBPASSWORD}
+      DBUSER: ${DBUSER}
+      JWT_SECRET: ${JWT_SECRET}
+
+  postgres:
+    build: ./DB
+    ports:
+      - "5432:5432" # TODO maybe remove to prevent access to db from outside
+    environment:
+      POSTGRES_USER: ${DBUSER}
+      POSTGRES_PASSWORD: ${DBPASSWORD}
+      POSTGRES_DB: ${DBNAME}
+    volumes:
+      - ./db_data/:/var/lib/postgresql/data/
+

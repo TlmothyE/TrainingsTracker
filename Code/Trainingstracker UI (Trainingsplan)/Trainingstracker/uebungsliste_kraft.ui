@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Uebungsliste</class>
+ <widget class="QDialog" name="Uebungsliste">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>380</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	background-color: rgb(69, 69, 69);
+	text-align: center;
+}
+
+#listWidget{
+	background-color: rgb(192, 192, 192);
+}
+
+#Titel{
+	color: white;
+	background-color: #761811;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px;
+	border-radius: 3px;
+}
+
+#pushButton_Neu{
+	background-color: #761811;
+}
+
+#pushButton_Abbrechen{
+	background-color: #761811;
+}</string>
+  </property>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>60</y>
+     <width>331</width>
+     <height>231</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Titel">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>20</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kraftübungen</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Neu">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>320</y>
+     <width>101</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Übung hinzufügen</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Abbrechen">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>350</y>
+     <width>85</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Abbrechen</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

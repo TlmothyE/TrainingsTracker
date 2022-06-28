@@ -1,0 +1,3 @@
+cmake-build-debug
+libs
+!libs/buildDependencies.sh
