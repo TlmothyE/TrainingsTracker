@@ -21,7 +21,7 @@ SOURCES += \
     neuestraining.cpp \
     training.cpp \
     uebungsart.cpp \
-    ../../client/source/user.cpp
+    user.cpp
     UebungClass.cpp
 
 HEADERS += \
@@ -35,7 +35,7 @@ HEADERS += \
     neuestraining.h \
     training.h \
     uebungsart.h \
-    ../../client/source/user.h
+    user.h
     UebungHead.h
     Trainingsplan.h
 
@@ -51,7 +51,7 @@ FORMS += \
     training.ui \
     uebungsart.ui
     Trainingsplan.h
-    ../../client/source/user.cpp
+    user.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

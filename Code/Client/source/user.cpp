@@ -100,7 +100,6 @@ void user::getFinished(QNetworkReply *reply)
     QList<QString> ordered;
 
     int quotationmark  = 0;
-    int iterator = 0;
     QString word;
 
     for(int i=0; i<temp.length(); i++){
@@ -189,14 +188,13 @@ void user::authUser(QString location, QString username, QString password){
 void user::authFinished(QNetworkReply *reply)
 {
 
-    //qInfo() << reply->readAll();
+
     //Casting the network reply into QList<QString> ordered for better usage
     QByteArray temp = reply->readAll();
     QList<QString> ordered;
 
 
     int quotationmark  = 0;
-    int iterator = 0;
     QString word;
 
     for(int i=0; i<temp.length(); i++){
@@ -213,9 +211,6 @@ void user::authFinished(QNetworkReply *reply)
     if(ordered[0]=="token"){ this->token = ordered[1];
     this->setUserId(ordered[3].toInt());
     }
-    //
-    //if(ordered[0]!="token") ;
-    //setting the variables for user from the created list ordered
-    //setUser(ordered);
+
 
 }

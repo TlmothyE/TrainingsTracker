@@ -28,3 +28,11 @@ services:
     volumes:
       - ./db_data/:/var/lib/postgresql/data/
 
+
+  doc_server:
+    build: ./ProjectVorstellungServer
+    ports:
+      - "80:80"
+    environment:
+      - NGINX_PORT=80
+

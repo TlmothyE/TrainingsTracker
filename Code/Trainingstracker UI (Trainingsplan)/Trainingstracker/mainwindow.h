@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "menu.h"
-#include "../../client/source/user.h"
+#include "user.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,6 +25,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    user user;
+    User user;
 };
 #endif // MAINWINDOW_H

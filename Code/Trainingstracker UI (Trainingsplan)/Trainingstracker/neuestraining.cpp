@@ -5,10 +5,11 @@
 #include <QTimer>
 #include <QListWidget>
 
-neuesTraining::neuesTraining(QWidget *parent) :
+neuesTraining::neuesTraining(int userId, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::neuesTraining)
 {
+    user.setUserId(userId);
     ui->setupUi(this);
     //tries getting existing exercises if any by default
     //ui->listWidget->addItem(Trainingsplan::getUebungen(listWidget));
@@ -23,8 +24,8 @@ neuesTraining::~neuesTraining()
 void neuesTraining::on_pushButton_Back_clicked()
 {
     neuesTraining::close();
-    //Training windowtraining();
-    //windowtraining.exec();
+    Training windowtraining(user.getUserId());
+    windowtraining.exec();
 }
 
 //opens "neuesTraining" dialog after User presses "Uebungsliste öffnen"

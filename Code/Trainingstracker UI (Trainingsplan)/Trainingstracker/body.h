@@ -2,7 +2,7 @@
 #define BODY_H
 
 #include <QDialog>
-#include "../../client/source/user.h"
+#include "user.h"
 #include <QTimer>
 
 namespace Ui {
@@ -31,7 +31,7 @@ private slots:
 
 private:
     Ui::Body *ui;
-    user user;
+    User user;
     QTimer *timer;
     bool isSet=false;
 };

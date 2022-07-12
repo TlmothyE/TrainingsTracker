@@ -3,7 +3,7 @@
 
 #include "uebungsliste_ausdauer.h"
 #include <QDialog>
-#include "../../client/source/user.h"
+#include "user.h"
 
 namespace Ui {
 class Training;
@@ -27,7 +27,7 @@ private slots:
 
 private:
     Ui::Training *ui;
-    user user;
+    User user;
 };
 
 #endif // TRAINING_H

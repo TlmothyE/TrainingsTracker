@@ -1,0 +1,107 @@
+body {
+    font-family: "Trebuchet MS";
+    margin: 0;
+}
+
+#top {
+    text-align: center;
+}
+
+#main {
+    text-align: center;
+}
+
+#logo {
+    color: white;
+    background-color: #761811;
+    display: inline-block;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 16px;
+}
+
+#logo-name {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 16px;
+
+}
+
+#navigation a {
+    color: gray;
+    padding: 8px;
+}
+
+#navigation a:hover {
+    color: #761811;
+}
+
+#top-image img {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#middle {
+    text-align: left;
+}
+
+.image1 img {
+    width: 50%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.image2 img {
+    display: inline-block;
+    width: 40%;
+    padding: 10px;
+    float: left;
+    margin-left: 50px;
+
+}
+
+.image3 img {
+    display: inline-block;
+    width: 40%;
+    padding: 10px;
+}
+
+.image4 img {
+    display: inline-block;
+    width: 40%;
+    padding: 10px;
+}
+
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.image5 img {
+    width: 70%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.image6 img {
+    width: 100%;
+    float: left;
+    margin-bottom: 16px;
+    margin-right: 5px;
+}
+
+.image7 img {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/*mobile Anpassungen*/
+@media screen and (max-width: 768px) {
+
+}

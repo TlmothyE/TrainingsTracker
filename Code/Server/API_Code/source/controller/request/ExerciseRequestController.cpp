@@ -37,28 +37,23 @@ namespace controller::request {
 
         // try to get model from database, if not found return with NotFound
         models::ExerciseModel exercisemodel;
+        controller::database::ExerciseDBController DBController;
+        exercisemodel.exerciseID = exerciseID;
 
         try {
-          exercisemodel = controller::database::ExerciseDBController().getExerciseByID(exerciseID);
+          DBController.getExerciseByID(exercisemodel);
 
         } catch (...) {
             message.reply(status_codes::NotFound);
             return;
         }
-/*
-        // convert exerciseIDs list of integers to list of json::value integers needed to create array for response
-        auto exerciseIdsJsonValue = std::vector<json::value>();
-        for (int &item: exercisemodel.exerciseID) {
-            exerciseIdsJsonValue.emplace_back(item);
-        }
 
- */
         // create response body and respond with OK status code
         auto response = json::value::object();
         response["exerciseID"] = exercisemodel.exerciseID;
         response["name"] = json::value::string(exercisemodel.name);
         response["userID"] = exercisemodel.userID;
-        response["exerciseType"] = exercisemodel.exerciseTyp;
+
 
         message.reply(status_codes::OK, response);
 
@@ -73,21 +68,18 @@ namespace controller::request {
             exercisemodel.exerciseID = body["exerciseID"].as_integer();
             exercisemodel.name = body["name"].as_string();
             exercisemodel.userID = body["userId"].as_integer();
-            exercisemodel.exerciseTyp= body["exerciseTyp"].as_integer();
 
-/*
-            for (auto &exerciseID: body["exerciseID"].as_array()) {
-                exercisemodel.exerciseID.emplace_back(uebungsId.as_integer());
-
-            }
-            */
         } catch (...) {
             message.reply(status_codes::BadRequest);
             return;
         }
 
+        controller::database::ExerciseDBController DBController;
+
+
         try {
-            controller::database::ExerciseDBController().addExercise(exercisemodel);
+            DBController.addExercise(exercisemodel);
+
         } catch (std::invalid_argument &e) {
             if (strcmp(e.what(), "already same id") != 0) {
                 message.reply(status_codes::Conflict);

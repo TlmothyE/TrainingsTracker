@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="API_Code"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/tim/team-4/Code/Server/API_Code"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="API_Code">
+				<Option output="/home/tim/team-4/Code/Server/API_Code/API_Code" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tim/team-4/Code/Server/API_Code"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/tim/team-4/Code/Server/API_Code/./libs/cpprestsdk/Release/include"/>
+					<Add directory="/home/tim/team-4/Code/Server/API_Code/./source/foundation/include"/>
+					<Add directory="/home/tim/team-4/Code/Server/API_Code/./libs/jwtcpp/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 API_Code"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="API_Code/fast">
+				<Option output="/home/tim/team-4/Code/Server/API_Code/API_Code" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tim/team-4/Code/Server/API_Code"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/tim/team-4/Code/Server/API_Code/./libs/cpprestsdk/Release/include"/>
+					<Add directory="/home/tim/team-4/Code/Server/API_Code/./source/foundation/include"/>
+					<Add directory="/home/tim/team-4/Code/Server/API_Code/./libs/jwtcpp/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 API_Code/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/tim/team-4/Code/Server/API_Code"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/tim/team-4/Code/Server/API_Code"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/tim/team-4/Code/Server/API_Code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/database/DBConnector.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/database/DBConnector.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/database/ProductDBController.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/database/ProductDBController.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/database/TableCreator.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/database/TableCreator.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/database/UsersDBController.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/database/UsersDBController.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/database/WorkoutroutineDBController.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/database/WorkoutroutineDBController.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/APIBasicController.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/APIBasicController.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/Controllers.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/ProductRequestController.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/ProductRequestController.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/RequestController.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/RequestController.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/UsersRequestController.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/UsersRequestController.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/WorkoutroutineRequestController.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/controller/request/WorkoutroutineRequestController.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/foundation/basic_controller.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/foundation/network_utils.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/main.cpp">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/models/ProductModel.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/models/UserModel.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/source/models/WorkoutroutineModel.h">
+			<Option target="API_Code"/>
+		</Unit>
+		<Unit filename="/home/tim/team-4/Code/Server/API_Code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

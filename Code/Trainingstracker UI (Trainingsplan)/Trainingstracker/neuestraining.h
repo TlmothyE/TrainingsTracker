@@ -2,6 +2,7 @@
 #define NEUESTRAINING_H
 
 #include <QDialog>
+#include "user.h"
 
 namespace Ui {
 class neuesTraining;
@@ -12,7 +13,7 @@ class neuesTraining : public QDialog
     Q_OBJECT
 
 public:
-    explicit neuesTraining(QWidget *parent = nullptr);
+    explicit neuesTraining(int userId, QWidget *parent = nullptr);
     ~neuesTraining();
 
 private slots:
@@ -24,6 +25,7 @@ private slots:
 
 private:
     Ui::neuesTraining *ui;
+    User user;
 };
 
 #endif // NEUESTRAINING_H

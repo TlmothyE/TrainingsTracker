@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Team 04: Trainingstracker</title>
+    <link href="css/top_style.css" rel="stylesheet">
+    <link href="css/main_style.css" rel="stylesheet">
+    <link href="css/footer_style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta , content="width=device-width" initial-scale=1" name="viewport">
+
+</head>
+<body>
+<div id="top">
+    <div id="logo"> TT</div>
+    <div id="logo-name"> Trainingstracker</div>
+    <div id="navigation">
+        <a href="#about-project">Über das Projekt</a>
+        <a href="#software">Benutzeroberfläche</a>
+        <a href="#docu">Projektaufwand</a>
+        <a href="api-doc.html">API Documentation</a>
+    </div>
+    <div id="top-image">
+        <img alt="Header Bild" src="img/header-bild2.jpg">
+    </div>
+</div>
+<div id="main">
+    <section id="about-project">
+
+        <h2>Über das Projekt</h2>
+        <p>Das Projekt ist ein Trainingstracker, welcher die Möglichkeit bietet, einen
+            Trainingsplan zu erstellen, sein Training aufzuzeichnen <br> und mit dem Plan zu
+            vergleichen. Trainierende Personen sollen damit simple und übersichtlich ihr Training tracken
+            und den <br>Fortschritt mitverfolgen. Zudem sollen die Personen ihre Kalorien und
+            Körpermasse tracken können.</p>
+        <p>Die Software richtet sich an Personen, welche kaum oder viel Erfahrung mit dem
+            Trainieren haben.
+            Einer Person, welche jahrelang trainiert, weiß genau auf was er achten muss:
+            Welche Übungen er machen will, was sein Kalorienbedarf ist und wie progressive er
+            trainiert.
+        <p>Eine Person mit nur wenig Erfahrung hingegen weiß dies nicht. Dadurch dass die
+            aber genau sieht wie gut oder schlecht der <br>Fortschritt ist, kann die Person
+            langsam lernen und weiß, in welchen Bereichen diese sich informieren soll.</p>
+        <br>
+        <h3>Architektur</h3>
+        <p>Für unser Projekt haben wir uns für den Model-View-Controller (MVC) entschieden.
+            Dieses Muster teilt die Software in ein Model, darin sind alle Daten enthalten, ein View,
+            dieses dient der visuellen Dartstellung, und dem Controller, welcher die Schnittstelle zwischen dem
+            Benutzer und dem System ist, ein.</p>
+        <p>Diese Architektur ist für unser Projekt am besten geeignet. Der Grund
+            dafür ist, dass die Komponenten voneinander abhängig sind und dadurch können Änderungen leichter
+            durchgeführt werden.</p>
+        <br>
+        <div class="image7">
+            <img alt="MVC" src="img/MVC.png">
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section id="software">
+        <h2>Benutzeroberfläche</h2>
+        <p>Wenn die Software gestartet wird, wird ein Login-Fenster angezeigt.<br>
+            Bei dem kann man nun seine Daten eingeben und sich anzumelden.</p>
+        <div class="image1">
+            <img alt="Login Bild" src="img/Login-Fenster.png">
+        </div>
+        <br>
+        <p>Nach dem Anmelden befindet man sich im Startmenü.</p>
+        <div class="image1">
+            <img alt="Startmenü Bild" src="img/Startmenü.png">
+        </div>
+        <br>
+        <p>Nach dem Anklicken auf "Mein Profil" erscheint ein Fenster bei dem
+            man seine Daten wie Name und Passwort ändern kann.</p>
+        <div class="image1">
+            <img alt="MeinProfil Bild" src="img/MeinProfil.png">
+        </div>
+        <br>
+        <p>Wenn man im Startmenü auf das Feld "Trainingsplan" geklickt hat kann man sich nun
+            entscheiden ob man einen neuen erstellen möchte oder die schon vorhandenen erblicken möchte.</p>
+        <div class="image1">
+            <img alt="Trainingsplan Bild" src="img/Trainingsplan.png">
+        </div>
+        <br>
+        <p>Um einen neuen Trainingsplan zu erstellen öffnet man mit einem Klick auf "Trainingsplan erstellen"
+            das passende Fenster. Um Übungen hinzuzufügen klickt man auf den Button "Übungsliste öffnen". </p>
+        <div class="image1">
+            <img alt="NeuerTrainingsplan Bild" src="img/NeuerTrainingsplan.png">
+        </div>
+        <br>
+        <p>Nun kann man sich für die Art der Übung entscheiden.</p>
+        <div class="image1">
+            <img alt="Übungsart Bild" src="img/Übungsart.png">
+        </div>
+        <br>
+        <p> Je nachdem ob man "Kraftübungen" oder "Ausdauerübungen" gewählt hat erscheinen die passenden Fenster.
+            Hier werden die schon erstellten Übungen angezeigt.</p>
+        <div class="column">
+            <div class="row">
+                <div class="image2">
+                    <img alt="Kraft Bild" src="img/Kraftübungen.png">
+                </div>
+
+                <div class="image3">
+                    <img alt="Ausdauer Bild" src="img/Ausadauerübungen.png">
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <p>Falls man eine neue Übung erstellen möchte, gibt man den Namen der Übung an und drückt auf "neue Übung
+            erstellen".
+            <br>Wenn man dies gemacht hat kann man
+            auf die gewünschte Übung wählen und dann auf "hinzufügen" klicken. Nun erscheint <br>das Fenster bei dem
+            man die Parameter einstellen kann.</p>
+        <div class="column">
+            <div class="row">
+                <div class="image2">
+                    <img alt="Schulterübung" src="img/Übungauswahl.png">
+                </div>
+                <div class="image4">
+                    <img alt="Kraftübung" src="img/Laufen.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="image2">
+                    <img alt="KraftPar" src="img/KraftParameter.png">
+                </div>
+                <div class="image4">
+                    <img alt="AusdauerPar" src="img/AusdauerParameter.png">
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <p>Der neu erstellte Trainingsplan mit den hinzugefügten Übungen kann man aufrufen
+            in dem man zurück zum Fenster "Traingsplan" geht und auf "Vorhandene Trainingspläne" klickt.
+        </p>
+        <div class="image1">
+            <img alt="Vorhandene" src="img/VorhandenePläne.png">
+        </div>
+        <br>
+        <p>Vom Startmenü aus kann man außerdem mit einem Klick auf "Körperangaben" auch seine Körpermaße
+            eintragen<br>oder mit einem Klick auf "Kalorienzähler" den täglichen Kalorienbedarf verfolgen.</p>
+        <div class="image5">
+            <img alt="Körperangaben" src="img/Körperangaben.png">
+        </div>
+        <div class="image5">
+            <img alt="Kalorienzähler" src="img/Kalorienzähler.png">
+        </div>
+        <br>
+        <br>
+        <section id="docu">
+            <h2>Projektaufwand</h2>
+            <p>Das schwerste Paket, wie auch erwartet, ist die Datenbank und der REST-API-Server gewesen.
+                Darin musste viel Zeit investiert werden, um eine gute, funktionierende Schnittstelle zu
+                schaffen.
+                Als nächstes wurden die Funktionalitäten behandelt, die im Vergleich allerdings keine allzu große
+                Herausforderung waren. Parallel dazu wurde die GUI entworfen. </p>
+            <br><br>
+            <div id="middle">
+                <p>Unser gesamter Zeitaufwand nach Disziplinen sah wie folgt aus: </p>
+                <div class="image6">
+                    <img alt="Zeiterfassung" src="img/Zeiterfassung%20Gesamt.png">
+                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                </div>
+            </div>
+        </section>
+</div>
+<br>
+<br>
+
+<div id="footer">Copyright 2022 | Trainingstracker</div>
+<h1></h1>
+</body>
+</html>

@@ -62,6 +62,13 @@ namespace controller::request {
         if (userId != 0) {
 
             UserDBController.updateUserPw(userId, new_password);
+
+            auto token = Authentication::createTokenForUserId(userId);
+            auto correctResponse = json::value::object();
+            correctResponse["userId"] = json::value::string(std::to_string(userId));
+            correctResponse["token"] = json::value::string(token);
+            message.reply(status_codes::OK, correctResponse);
+
             return;
         } else {
 

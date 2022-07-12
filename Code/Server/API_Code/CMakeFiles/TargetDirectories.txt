@@ -1,0 +1,3 @@
+/home/tim/team-4/Code/Server/API_Code/CMakeFiles/API_Code.dir
+/home/tim/team-4/Code/Server/API_Code/CMakeFiles/edit_cache.dir
+/home/tim/team-4/Code/Server/API_Code/CMakeFiles/rebuild_cache.dir

@@ -9,7 +9,7 @@ Menu::Menu(int userId, QString token, QWidget *parent) :
     ui(new Ui::Menu)
 {
     this->user.setUserId(userId);
-    //TODO user setToken funktion
+    //TODO User setToken funktion
     this->user.token=token;
 
     ui->setupUi(this);

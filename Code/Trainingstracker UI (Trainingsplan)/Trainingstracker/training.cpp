@@ -20,7 +20,7 @@ Training::~Training()
 void Training::on_pushButton_newTraining_clicked()
 {
     Training::close();
-    neuesTraining windowneu;
+    neuesTraining windowneu(user.getUserId());
     windowneu.setModal(true);
     windowneu.exec();
 }

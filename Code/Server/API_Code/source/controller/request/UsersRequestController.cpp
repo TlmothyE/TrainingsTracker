@@ -31,8 +31,8 @@ namespace controller::request {
         }
 
         // check if id field is empty, if empty return with bad request
-        if (userId_string.empty()) {
-            message.reply(status_codes::BadRequest);
+        if (userId_string.empty() || authHeader.empty()) {
+            message.reply(status_codes::Unauthorized);
             return;
         }
 
@@ -40,12 +40,12 @@ namespace controller::request {
         try {
             userId = std::stoi(userId_string);
         } catch (...) {
-            message.reply(status_codes::BadRequest);
+            message.reply(status_codes::Unauthorized);
             return;
         }
 
         if (!Authentication::tokenValidForUserId(authHeader, userId)) {
-            message.reply(status_codes::Forbidden, createErrorJson("Wrong auth token for userId"));
+            message.reply(status_codes::Unauthorized, createErrorJson("Wrong auth token for userId"));
             return;
         }
 

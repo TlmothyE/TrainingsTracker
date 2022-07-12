@@ -8,12 +8,12 @@ using namespace pqxx;
 using namespace std;
 using namespace controller::database;
 
-void ExerciseDBController::addExercise(models::ExerciseModel ex){
+void ExerciseDBController::addExercise(models::ExerciseModel &emodel){
 
     string sql;
 
-    sql = "INSERT INTO exercises(exerciseID,userID,name,exerciseType) VALUES(" + to_string(ex.exerciseID) + ", " + to_string(ex.userID) + "," +
-            ex.name + "," + to_string(ex.exerciseTyp) + ");";
+    sql = "INSERT INTO exercises(exerciseID,userID,name,exerciseType) VALUES(" + to_string(emodel.exerciseID) + ", " + to_string(emodel.userID) + "," +
+            emodel.name +  ");";
 
     work W(*C);
 
@@ -22,31 +22,26 @@ void ExerciseDBController::addExercise(models::ExerciseModel ex){
     W.commit();
 }
 
-models::ExerciseModel ExerciseDBController::getExerciseByID(int exID) {
+models::ExerciseModel ExerciseDBController::getExerciseByID(models::ExerciseModel &emodel) {
 
     string sql;
 
-    sql = "SElECT * FROM exercises WHERE exerciseID = " + to_string(exID) + ";";
+    sql = "SElECT * FROM exercises WHERE exerciseID = " + to_string(emodel.exerciseID) + ";";
 
     work W(*C);
 
-    W.exec(sql);
+    result R(W.exec(sql));
 
-    W.commit();
+    //if (R.empty()) throw std::invalid_argument("ExerciseNotFound");
 
-    return models::ExerciseModel{}; //TODO create Model from response
+    for(auto row : R){
+        emodel.exerciseID = std::stoi(row[0].c_str());
+        emodel.userID = std::stoi(row[1].c_str());
+        emodel.name = row[2].c_str();
+    }
+
+    return emodel;
 }
 
-void ExerciseDBController::deleteExercise(int exID) {
 
-    string sql;
-
-    sql = "DELETE * FROM exercises WHERE exerciseID = " + to_string(exID) + ";";
-
-    work W(*C);
-
-    W.exec(sql);
-
-    W.commit();
-}
 

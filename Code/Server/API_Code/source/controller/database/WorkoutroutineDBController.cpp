@@ -11,24 +11,32 @@ using namespace std;
 using namespace controller::database;
 
 void WorkoutroutineDBController::addWorkoutroutine(const WorkoutroutineModel &wkmodel) {
-
-    std::string sql;
-
-    sql = "INSERT INTO workoutroutines(workoutroutineID, Date)" \
-      "VALUES(" + to_string(wkmodel.workoutroutineID) + ", '" + wkmodel.date + "'); " \
-            "INSERT INTO exercise_workoutroutines(workoutroutineID, exerciseID, targetReps, targetSets, targetWeight, targetTime) VALUES (" \
- + to_string(wkmodel.workoutroutineID) + " , " + to_string(wkmodel.exerciseIDs) + ", " + to_string(wkmodel.targetReps) +
-          "," \
- + to_string(wkmodel.targetSets) + ", " + to_string(wkmodel.targetWeight) + "," + to_string(wkmodel.targetTime) + "=;";
-
     work W(*C);
+    nontransaction N(*C);
 
-    W.exec(sql);
+    std::string sql = "INSERT INTO workoutroutines (\"userID\") VALUES (" + to_string(wkmodel.userID) +
+                      ") RETURNING \"workoutroutineID\";";
+    result R(N.exec(sql));
+
+    for (const auto &single_result: R) {
+        cout << "Single Result:" << endl;
+        for (const auto &single_result_item: single_result) {
+            cout << "\t" << single_result_item << endl;
+        }
+    }
+    return;
+    int workoutroutineID = 1234;
+    for (const auto &item: wkmodel.exerciseIDs) {
+        sql = R"(Insert into workoutroutines_exercise ("workoutroutineID", "exerciseID") VALUES ()" +
+              to_string(workoutroutineID) + ", " +
+              to_string(item) + ");";
+        W.exec(sql);
+    }
     W.commit();
 }
 
 
-WorkoutroutineModel WorkoutroutineDBController::getWorkoutroutineByID(int wID) {
+WorkoutroutineModel WorkoutroutineDBController::getWorkoutroutineByID(WorkoutroutineModel &wmodel) {
 
     return {};
 

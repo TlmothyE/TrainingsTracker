@@ -1,0 +1,328 @@
+openapi: "3.0.2"
+info:
+  title: Trainingstracker API
+  version: "1.0"
+servers:
+  - url: (server-url):6502/v1/tracker/api
+
+paths:
+  /service/test:
+    get:
+      tags:
+        - ServiceTest
+      description: "Test service"
+      parameters: [ ]
+      responses:
+        '200':
+          description: "Response for working service"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  version:
+                    type: string
+                    example: v.0.0.1
+                  status:
+                    type: string
+                    example: ready!
+  /users:
+    get:
+      tags:
+        - user
+      description: 'Manages User related data'
+      security:
+        - Authorization: [ ]
+      parameters:
+        - name: userId
+          required: true
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          $ref: "#/components/responses/UserResponse"
+        '401':
+          $ref: "#/components/responses/UnauthorizedError"
+        '404':
+          description: User not found
+    put:
+      tags:
+        - "user"
+      security:
+        - Authorization: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        '200':
+          description: OK
+        '401':
+          $ref: "#/components/responses/UnauthorizedError"
+  /auth:
+    get:
+      description: 'Get Authorization token with username and password'
+      tags:
+        - auth
+      parameters:
+        - name: username
+          in: query
+          schema:
+            type: string
+        - name: password
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                  token:
+                    type: string
+                    description: Authorization token
+        '400':
+          description: Bad Request -> Need to provide username and password as uri parameters
+        '403':
+          description: Wrong username or password
+    put:
+      description: Update user password
+      tags:
+        - auth
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: new_password
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Password changed successfully"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                  token:
+                    type: string
+                    description: new authorization token
+        '400':
+          description: parameters missing
+        '401':
+          description: wrong username or password
+    post:
+      description: Create new User
+      tags:
+        - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: user created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                  token:
+                    type: string
+        '400':
+          description: username or password missing in body
+        '409':
+          description: username already exists
+  /workoutroutine:
+    get:
+      description: 'Get workoutroutine with workoutroutineID'
+      tags:
+        - workoutroutine
+      parameters:
+        - name: workoutroutineID
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Workoutroutine"
+        '400':
+          description: workoutroutineID missing or not integer
+        '404':
+          description: no workoutroutine found for provided workoutroutineID
+    post:
+      description: ""
+      tags:
+        - workoutroutine
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Workoutroutine"
+      responses:
+        '201':
+          description: "Workoutroutine created"
+        '400':
+          description: "Wrong request body format"
+        '409':
+          description: "ID already in use"
+  /exercise:
+    get:
+      description: 'Get exercise with exerciseID'
+      tags:
+        - exercise
+      parameters:
+        - name: exerciseID
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Exercise"
+        '400':
+          description: exerciseID wrong format or missing
+        '404':
+          description: exercise with provided exerciseID not found
+    post:
+      description: Create new exercise
+      tags:
+        - exercise
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Exercise"
+      responses:
+        '201':
+          description: "Exercise created"
+        '409':
+          description: "ExerciseID already in use"
+
+components:
+  securitySchemes:
+    Authorization:
+      type: "http"
+      scheme: "bearer"
+      bearerFormat: "JWT"
+
+  schemas:
+    User:
+      type: object
+      properties:
+        userId:
+          type: integer
+          example: 132
+        age:
+          type: string
+          example: '23'
+        userName:
+          type: string
+          example: "Hans"
+        weight:
+          type: string
+          example: "85"
+        height:
+          type: string
+          example: "189"
+        calfCir:
+          type: string
+        hipCir:
+          type: string
+        tightCir:
+          type: string
+        chestCir:
+          type: string
+        upperArmCir:
+          type: string
+        bmi:
+          type: string
+    Workoutroutine:
+      type: object
+      properties:
+        workoutroutineID:
+          type: integer
+        userID:
+          type: integer
+          description: userID owning workoutroutine
+        date:
+          type: string
+        exerciseIDs:
+          type: array
+          description: exercises contained in workoutroutine
+          items:
+            type: integer
+        exerciseNames:
+          type: array
+          description: exercise names
+          items:
+            type: string
+        targetSets:
+          type: array
+          description: targetSets for exercises
+          items:
+            type: integer
+        targetReps:
+          type: array
+          description: targetReps for exercises
+          items:
+            type: integer
+        targetWeights:
+          type: array
+          description: targetWeights for exercises
+          items:
+            type: integer
+    Exercise:
+      type: object
+      properties:
+        exerciseID:
+          type: integer
+        name:
+          type: string
+        userID:
+          type: integer
+          description: userID who created this exercise
+
+  responses:
+    UnauthorizedError:
+      description: Access token missing or invalid
+    UserResponse:
+      description: Requested user info
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/User"
+        

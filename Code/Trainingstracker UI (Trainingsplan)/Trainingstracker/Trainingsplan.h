@@ -12,7 +12,7 @@ all the planned exercises.
 
 #include <ctime>
 #include <list>
-#include <string.h>
+#include <string>
 
 class Uebung {
 

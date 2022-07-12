@@ -19,7 +19,6 @@ namespace models{
         int exerciseID;
         std::string name;
         int userID;
-        bool exerciseTyp;
 
     };
 

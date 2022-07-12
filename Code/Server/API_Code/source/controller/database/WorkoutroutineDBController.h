@@ -27,7 +27,7 @@ namespace controller::database {
         //add TrainingsplanID and Date of the Plan
         void addWorkoutroutine(const WorkoutroutineModel &workoutroutinemodel);
 
-        WorkoutroutineModel getWorkoutroutineByID(int wID);
+        WorkoutroutineModel getWorkoutroutineByID(WorkoutroutineModel &wmodel);
 
         void removeWorkoutroutine(const WorkoutroutineModel &workoutroutinemodel);
     };

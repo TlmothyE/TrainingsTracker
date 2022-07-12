@@ -16,11 +16,11 @@ namespace controller::database {
 
     public:
 
-        void addExercise(models::ExerciseModel ex);
+        void addExercise(models::ExerciseModel &emodel);
 
-        models::ExerciseModel getExerciseByID(int exID);
+        models::ExerciseModel getExerciseByID(models::ExerciseModel &emodel);
 
-        void deleteExercise(int exID);
+
 };
 
 }//namespace

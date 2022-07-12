@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "training.h"
-#include "../../client/source/user.h"
+#include "user.h"
 
 namespace Ui {
 class Menu;
@@ -28,7 +28,7 @@ private slots:
 
 private:
     Ui::Menu *ui;
-    user user;
+    User user;
 
 
 };

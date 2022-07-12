@@ -3,7 +3,7 @@
 #include "menu.h"
 #include "QMessageBox"
 #include "QString"
-#include "../../client/source/user.h" //Header-file from Koerperangaben
+#include "user.h" //Header-file from Koerperangaben
 #include <iostream>
 
 
@@ -12,15 +12,15 @@ Body::Body(int userId, QString token, QWidget *parent) :
     ui(new Ui::Body)
 {
     this->user.setUserId(userId);
-    //TODO user setToken funktion
+    //TODO User setToken funktion
     this->user.token=token;
-    user.getUserHttp("http://192.168.178.53:6502/v1/tracker/api/users", QString::number(user.getUserId()));//QString::number(user.getUserId())
+    user.getUserHttp("http://192.168.178.53:6502/v1/tracker/api/users", QString::number(user.getUserId()));//QString::number(User.getUserId())
 
 
     timer= new QTimer(this);
     connect(timer, SIGNAL(timeout()),this, SLOT(setSpinBoxes()));
     timer->start(100);
-    //connect(&user, SIGNAL(variableChanged()), this, SLOT(setSpinBoxes()));
+    //connect(&User, SIGNAL(variableChanged()), this, SLOT(setSpinBoxes()));
 
 
     ui->setupUi(this);
@@ -33,7 +33,7 @@ Body::Body(int userId, QString token, QWidget *parent) :
 
 
 void Body::setSpinBoxes(){
-    //user.getUserHttp("http://192.168.178.53:6502/v1/tracker/api/users");
+    //User.getUserHttp("http://192.168.178.53:6502/v1/tracker/api/users");
     if(isSet==false){
 
 
@@ -65,7 +65,7 @@ Body::~Body()
 
 void Body::initUser()
 {
-    //this->user.getUserHttp("http://192.168.178.97:6502/v1/tracker/api/users");
+    //this->User.getUserHttp("http://192.168.178.97:6502/v1/tracker/api/users");
 
 }
 
@@ -105,7 +105,7 @@ void Body::on_pushButton_Speichern_clicked()
             QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 
     isSet = false;
-    //user koerper{gewicht, groesse, arm, brust, huefte, oberschenkel, waden};
+    //User koerper{gewicht, groesse, arm, brust, huefte, oberschenkel, waden};
 }
 
 //closes window after pressing "Zurueck" button and opens startmenu

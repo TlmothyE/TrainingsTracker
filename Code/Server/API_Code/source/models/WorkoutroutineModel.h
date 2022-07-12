@@ -14,13 +14,16 @@ The class holds the data of a specific workoutroutine
 class WorkoutroutineModel {
 
 public:
+
     int workoutroutineID;
+    int userID;
     std::string date;
     std::vector<int> exerciseIDs;
+    std::vector<std::string> exerciseNames;
     std::vector<int> targetReps;
     std::vector<int> targetSets;
-    std::vector<int> targetWeight;
-    std::vector<int> targetTime;
+    std::vector<int> targetWeights;
+
 
     WorkoutroutineModel() = default;
 };
